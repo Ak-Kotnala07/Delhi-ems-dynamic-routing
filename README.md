@@ -30,8 +30,8 @@ For this research, we utilize **DBSCAN** because urban emergency service locatio
    ```bash
    git clone [https://github.com/Ak-Kotnala07/Document-Intelligence-Simulator.git](https://github.com/Ak-Kotnala07/Document-Intelligence-Simulator.git)
    cd Document-Intelligence-Simulator
-## 📂 Project Structure
-   ├── src/
+.
+├── src/
 │   ├── clustering_logic.py     # DBSCAN implementation for vulnerability mapping
 │   └── ocr_parser.py           # Document processing with pytesseract
 ├── requirements.txt            # Project dependencies
