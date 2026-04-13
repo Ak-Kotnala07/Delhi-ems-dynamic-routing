@@ -2,31 +2,38 @@
 ### Master of Science in Data Science | Amity University, Noida
 
 ## 📌 Project Overview
-This research project focuses on the **Dynamic Vulnerability Assessment of Urban Emergency Services** in the Delhi National Capital Region (NCR). By integrating **OpenStreetMap (OSM)** spatial data with **Real-time Transit Data (GTFS)**, this study evaluates the accessibility and resilience of emergency services (Hospitals, Fire Stations, etc.) against urban disruptions.
-
-The project utilizes **DBSCAN Clustering** to identify high-vulnerability zones and spatial gaps in service delivery.
+This research project, titled **"Dynamic Vulnerability Assessment of Urban Emergency Services,"** focuses on evaluating the resilience and accessibility of emergency infrastructure (Hospitals, Fire Stations) in the Delhi NCR region. By integrating **OpenStreetMap (OSM)** spatial data with **Real-time Transit Data (GTFS)**, the study identifies urban service gaps through density-based spatial analysis.
 
 ## 🚀 Key Features
-- **Spatial Data Extraction:** Automated retrieval of urban infrastructure data via OSM.
-- **Transit Network Analysis:** Integration of Delhi Bus/Metro data to simulate real-world accessibility.
-- **Machine Learning Integration:** Implementation of **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) to identify underserved urban clusters.
-- **Vulnerability Mapping:** Visualizing service bottlenecks using GeoPandas and Folium.
+* **Geospatial Data Extraction**: Automated retrieval of urban points of interest (POIs) and road networks using the Overpass API and OSMnx.
+* **Transit Network Analysis**: Integration of Delhi’s public transit network (Bus and Metro) to assess real-world accessibility.
+* **Machine Learning Integration**: Implementation of **DBSCAN** (Density-Based Spatial Clustering of Applications with Noise) to identify underserved urban clusters and vulnerability hotspots.
+* **Document OCR**: Integration of Tesseract OCR to process historical scanned transit reports and logs.
+
+## 🧪 Methodology
+For this research, we utilize **DBSCAN** because urban emergency service locations do not follow spherical distributions. 
+* **Parameters**: The core distance function $d(p, q)$ accounts for real-world road network distances rather than Euclidean distance.
+* **Clustering**: We identify high-vulnerability zones where service density is insufficient relative to transit availability.
 
 ## 🛠️ Tech Stack
-- **Language:** Python 3.x
-- **Libraries:** - `GeoPandas` & `Shapely` (Spatial Data Processing)
-  - `Scikit-Learn` (DBSCAN & Clustering)
-  - `OSMnx` (Network Analysis)
-  - `Pandas` & `NumPy` (Data Manipulation)
-- **Visualization:** Matplotlib, Folium, Seaborn
+* **Language**: Python 3.14.2
+* **OCR & Imaging**: 
+  * `pytesseract==0.3.13` (Optical Character Recognition)
+  * `pillow==12.2.0` (Image Processing)
+* **Spatial & Machine Learning**:
+  * `GeoPandas`, `OSMnx`, `Shapely`
+  * `Scikit-learn` (DBSCAN Clustering)
+* **Core Utilities**: `packaging==26.0`
 
+## 📁 Installation & Setup
+1. **Clone the Repository**:
+   ```bash
+   git clone [https://github.com/Ak-Kotnala07/Document-Intelligence-Simulator.git](https://github.com/Ak-Kotnala07/Document-Intelligence-Simulator.git)
+   cd Document-Intelligence-Simulator
 ## 📂 Project Structure
-```text
-├── src/
-│   ├── data_preprocessing.py   # Cleaning Delhi bus and transit data
-│   ├── clustering_logic.py     # DBSCAN implementation
-│   └── network_analysis.py     # Accessibility metrics calculation
-├── notebooks/
-│   └── analysis_demo.ipynb     # Exploratory Data Analysis
-├── .gitignore                  # Rules to ignore GTFS, CSVs, and WPRs
-└── README.md                   # Project Documentation
+   ├── src/
+│   ├── clustering_logic.py     # DBSCAN implementation for vulnerability mapping
+│   └── ocr_parser.py           # Document processing with pytesseract
+├── requirements.txt            # Project dependencies
+├── .gitignore                  # Filters for GTFS, CSVs, and WPR data
+└── README.md                   # Final Dissertation Documentation
