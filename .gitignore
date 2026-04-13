@@ -1,0 +1,18 @@
+# --- Dissertation Specific Data ---
+# Ignores all GTFS folders or zip files
+gtfs/
+*.gtfs
+sample_gtfs/
+
+# Ignores Delhi Bus Data (CSVs and Excel sheets can be huge)
+*delhi_bus*
+*.csv
+*.xlsx
+*.json
+*.parquet
+# Ignores Weekly Progress Reports (WPRs)
+# This keeps your internal university docs out of your code repo
+WPR/
+*WPR*.docx
+*WPR*.pdf
+*Weekly_Progress_Report*
